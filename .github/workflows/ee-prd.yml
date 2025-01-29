@@ -101,7 +101,7 @@ jobs:
 
       - uses: saucelabs/saucectl-run-action@v4.3.0
         env:
-          GIT_TOKEN: ${{ git.token }}
+          GIT_TOKEN: ${{ github.token }}
           EDGE_BASE_PATH: ${{ github.event.inputs.edgeBasePath }}
         with:
           sauce-username: ${{ secrets.SAUCE_USERNAME }}
