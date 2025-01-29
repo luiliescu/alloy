@@ -50,7 +50,7 @@ jobs:
         id: last_release
         uses: InsonusK/get-latest-release@v1.0.1
         with:
-          myToken: ${{ github.token }}
+          myToken: ${{ git.token }}
           exclude_types: "draft|prerelease"
 
       - uses: actions/checkout@v4
@@ -101,7 +101,7 @@ jobs:
 
       - uses: saucelabs/saucectl-run-action@v4.3.0
         env:
-          GIT_TOKEN: ${{ github.token }}
+          GIT_TOKEN: ${{ git.token }}
           EDGE_BASE_PATH: ${{ github.event.inputs.edgeBasePath }}
         with:
           sauce-username: ${{ secrets.SAUCE_USERNAME }}
